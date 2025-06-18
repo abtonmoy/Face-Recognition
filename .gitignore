@@ -60,3 +60,8 @@ dist/
 # IDEs
 .idea/
 *.iml
+
+# Custom user data
+access_log.json
+users_database.pkl
+faces_data.pkl

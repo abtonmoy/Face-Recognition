@@ -150,7 +150,7 @@ class FaceRecognitionLock:
         print("5. Ensure good lighting from front")
         print("Press SPACE to capture samples, 'q' to finish early")
         
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         
@@ -442,7 +442,7 @@ class FaceRecognitionLock:
     
     def run_lock_system(self):
         """Run the main face recognition lock system"""
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         
