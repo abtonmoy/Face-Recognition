@@ -36,7 +36,7 @@ This project implements a basic face recognition lock system using OpenCV and th
 
 1.  **Run the Script:** Execute the script from your terminal:
     ```bash
-    python face_lock.py
+    python main.py
     ```
 2.  **Follow the Menu:** The script will present a menu with the following options:
     - `1. Add new user`: Adds a new user to the system.
