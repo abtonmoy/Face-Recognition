@@ -501,7 +501,7 @@ def setup_system():
     
     while True:
         print("\n" + "="*50)
-        print("FACE RECOGNITION LOCK SYSTEM - 60% CONFIDENCE")
+        print("FACE RECOGNITION LOCK SYSTEM - 30% CONFIDENCE")
         print("="*50)
         print("1. Add new user")
         print("2. Capture face samples for user")
