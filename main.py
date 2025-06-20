@@ -18,7 +18,11 @@ class FaceRecognitionLock(FaceRecognition, DataManager, LockSystem):
         FaceRecognition.__init__(self)
         DataManager.__init__(self)
         LockSystem.__init__(self, confidence_threshold, lock_timeout)
+        
 
+        # Train recognizer after loading data
+        self.train_recognizer()
+        print("Face recognizer initialized with training data")
         # Register cleanup function to save data on exit
         atexit.register(self.cleanup_on_exit)
         

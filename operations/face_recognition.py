@@ -19,6 +19,25 @@ class FaceRecognition:
         self.confidence_threshold = 0.6
         print("Face Recognition Initialized")
 
+    def train_recognizer(self):
+        """Train the face recognizer with current faces_data"""
+        if hasattr(self, 'faces_data') and len(self.faces_data['faces']) > 0:
+            try:
+                print("Training face recognition model...")
+                faces_array = np.array(self.faces_data['faces'])
+                labels_array = np.array(self.faces_data['labels'])
+                self.face_recognizer.train(faces_array, labels_array)
+                print("Training completed!")
+                return True
+            except Exception as e:
+                print(f"Error training recognizer: {e}")
+                return False
+        else:
+            print("No face data available for training")
+            return False
+
+    
+
     def recognize_face(self, face_roi):
         """Recognize a face and return user_id and confidence with improved preprocessing"""
         if not hasattr(self, 'faces_data') or len(self.faces_data['faces']) == 0:
@@ -132,6 +151,10 @@ class FaceRecognition:
             print("Training face recognition model...")
             self.face_recognizer.train(faces_array, labels_array)
             print("Training completed!")
+
+        if samples_captured > 0:
+            self.train_recognizer()  # Call the training method
+        
         return True
 
     def process_faces(self, frame, faces):
