@@ -64,10 +64,10 @@ class LockSystem:
         # Lock status with proper colors
         if self.is_locked:
             lock_color = (0, 0, 255)  # Red for locked
-            lock_text = "🔒 LOCKED"
+            lock_text = ":O LOCKED"
         else:
             lock_color = (0, 255, 0)  # Green for unlocked
-            lock_text = "🔓 UNLOCKED"
+            lock_text = "=^.^= UNLOCKED"
 
         # Draw status box with proper colors
         cv2.rectangle(frame, (10, 10), (350, 120), (0, 0, 0), -1)  # Black background
